@@ -1,17 +1,11 @@
-class CuentaBanco {
-    #nombreTitular;
-    #numeroCuenta;
-    #saldo;
-    #fechaApertura;
+import { Cuenta } from './Cuenta.js';
 
-    constructor( titular, numeroCuenta ) {
-        this.#nombreTitular = titular;
-        this.#numeroCuenta = numeroCuenta;
-        this.#fechaApertura = new Date();
-        this.#saldo = 0;
-    }
-}
 
-const cuentaJuan = new CuentaBanco( 'Juan', '986654353-0' );
+const
+    cuentaJuan = new Cuenta( 'Juan', '986654353-0' ),
+    cuentaSofia = new Cuenta( 'Sofia', '986344521-0' );
 
+console.group( Cuenta.getCuentas() );
 console.log( cuentaJuan );
+console.log( cuentaSofia );
+console.groupEnd();
