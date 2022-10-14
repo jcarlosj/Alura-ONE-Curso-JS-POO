@@ -1,12 +1,12 @@
 export class Cuenta {
-    #nombreTitular;
+    #cliente;
     #numeroCuenta;
     #saldo;
     #fechaApertura;
     static cantidad = 0;        // Atributo estático de la Clase
 
-    constructor( titular, numeroCuenta ) {
-        this.#nombreTitular = titular;
+    constructor( cliente, numeroCuenta ) {
+        this.#cliente = cliente;
         this.#numeroCuenta = numeroCuenta;
         this.#fechaApertura = new Date();
         this.#saldo = 0;
@@ -14,7 +14,8 @@ export class Cuenta {
         Cuenta.cantidad ++;
     }
 
-    static getCuentas() {
-        return `Cantidad cuentas creadas: ${ Cuenta.cantidad }`;
+    // Metodo estático de la clase
+    static getCantidad() {
+        return `Cantidad cuentas: ${ Cuenta.cantidad }`;
     }
 }
