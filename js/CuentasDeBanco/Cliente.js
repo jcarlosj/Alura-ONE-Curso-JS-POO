@@ -14,6 +14,6 @@ export class Cliente {
 
     // Metodo estático de la clase
     static getCantidad() {
-        return `Cantidad clientes: ${ Cliente.cantidad }`;
+        return `# total clientes: ${ Cliente.cantidad }`;
     }
 }
