@@ -22,6 +22,10 @@ export class Cliente {
         this.#clave = newClave;
     }
 
+    isAutenticable( clave ) {
+        return this.clave === clave;     
+    }
+
     // Metodo estático de la clase
     static getCantidad() {
         return `# total clientes: ${ Cliente.cantidad }`;

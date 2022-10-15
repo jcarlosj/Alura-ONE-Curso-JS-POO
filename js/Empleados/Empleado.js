@@ -21,6 +21,10 @@ export class Empleado {
     set clave( newClave ) {
         this.#clave = newClave;
     }
+    
+    isAutenticable( clave ) {
+        return this.clave === clave;     
+    }
 
     // Metodo estático de la clase
     static getCantidad() {
