@@ -21,12 +21,19 @@ const
     cuenta2 = new CuentaAhorros( sofia, '986344521-0' ),
     cuenta3 = new CuentaCorriente( sofia, '783232221-3' );
 
-    // showData([ cuenta1, cuenta2, cuenta3 ]);
+showData([ cuenta1, cuenta2, cuenta3 ]);
 
-    cuenta1.depositar( 500 );
-    cuenta1.depositar( 50 );
-    cuenta1.retirar( 120 );
-    cuenta1.transferir( cuenta2, 400 );
+// Asignamos claves
+juan.clave = '26513';
+sofia.clave = '92316';
+
+console.log( Autenticacion.login( juan, '26513' ) );
+console.log( Autenticacion.login( sofia, '92311' ) );
+
+cuenta1.depositar( 500 );
+cuenta1.depositar( 50 );
+cuenta1.retirar( 120 );
+cuenta1.transferir( cuenta2, 400 );
 
 /** Empleados Banco */
 const
