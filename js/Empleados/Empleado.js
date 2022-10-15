@@ -2,6 +2,7 @@ export class Empleado {
     #fullName;
     #numeroCedula;
     #salario;
+    #clave;
 
     static cantidad = 0;        // Atributo estático de la Clase
 
@@ -9,8 +10,16 @@ export class Empleado {
         this.#fullName = fullName;
         this.#numeroCedula = numeroCedula;
         this.#salario = salario;
+        this.#clave = '';
 
         Empleado.cantidad ++;
+    }
+
+    get clave() {
+        return this.#clave;
+    }
+    set clave( newClave ) {
+        this.#clave = newClave;
     }
 
     // Metodo estático de la clase
