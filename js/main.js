@@ -28,8 +28,10 @@ const
 
 /** Empleados Banco */
 const
-    empleado = new Empleado( 'Juan J', '79878292' ),
-    gerente = new Gerente( 'Sofia G', '41710478' ),
-    director = new Director( 'Milo J', '76232343' );
+    empleado = new Empleado( 'Juan J', '79878292', 10000 ),
+    gerente = new Gerente( 'Sofia G', '41710478', 12000 ),
+    director = new Director( 'Milo J', '76232343', 15000 );
 
-console.log([ empleado, gerente, director ]);
+console.log( empleado, empleado.bonificacion() );
+console.log( gerente, gerente.bonificacion() );
+console.log( director, director.bonificacion() );
