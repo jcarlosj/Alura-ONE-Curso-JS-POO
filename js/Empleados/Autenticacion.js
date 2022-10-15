@@ -3,13 +3,12 @@
 export class Autenticacion {
     // static convertira el metodo y la clase en una clase estatica
     static login( usuario, clave ) {
-        try {
-            return usuario.isAutenticable( clave );    // clave ahora existe tanto en nuestra clase Empleado como en nuestra clase Cliente y obliga a la implentacion del metodo 'isAutenticable' en todas las clases que implementen esta clase o interface
-        }
-        catch ( e ) {
-            // console.log( e );   // return usuario.isAutenticable( clave );    // clave ahora existe tanto en nuestra clase Empleado como en nuestra clase Cliente y obliga a la implentacion del metodo 'isAutenticable' en todas las clases que implementen esta clase o interface
-            throw new Error( 'Esta interface le obliga a definir el metodo "isAutenticable" en la implementacion de su clase' );
-        }
+
+        // Valida si el atributo 'clave' y el metodo 'isAutenticable' existen dentro de la clase que implementa la interface
+        if( 'clave' in usuario && usuario.isAutenticable instanceof Function )
+            return usuario.isAutenticable( clave );
+        else
+            throw new Error( `La interface '${ Autenticacion.name }' indica que debe implementar el atributo "clave" y el metodo "isAutenticable" en la implementacion de la clase '${ usuario.constructor.name }'` );
         
     }
 }
